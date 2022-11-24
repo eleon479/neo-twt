@@ -16,12 +16,12 @@ function App() {
         <aside id="Navigation">
           <a href="https://twitter.com">
             <div className="Navigation-link-inner">
-              <div className="Navigation-icon-wrapper">
+              <div className="Navigation-icon-wrapper bird-logo">
                 <FaTwitter />
               </div>
             </div>
           </a>
-          <a href="https://twitter.com">
+          <a href="https://twitter.com" className="Active-tab">
             <div className="Navigation-link-inner">
               <div className="Navigation-icon-wrapper">
                 <FaHome />
@@ -73,7 +73,8 @@ function App() {
           </a>
           <a>
             <div className="Navigation-link-inner">
-              <button>Tweet</button>
+              <button className="Navigation-tweet-btn-sm">T</button>
+              <button className="Navigation-tweet-btn-lg">Tweet</button>
             </div>
           </a>
         </aside>

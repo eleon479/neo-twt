@@ -1,7 +1,7 @@
 :root {
   --text: #ffffff;
   --background: #15202b;
-  --highlight: #5e6b78;
+  --highlight: #3d4650;
   --border: #38444d;
 }
 
@@ -14,6 +14,7 @@
 
 .App-wrapper {
   display: flex;
+  flex-direction: row;
   justify-content: center;
   gap: 30px;
   height: 100%;
@@ -23,8 +24,10 @@
 aside#Navigation {
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
   align-items: flex-start;
   max-width: 275px;
+  width: 275px;
   padding: 0;
   margin: 0;
   /* background-color: blue; */
@@ -32,49 +35,44 @@ aside#Navigation {
 
 aside#Navigation a {
   padding: 4px 0px;
+  width: 100%;
+}
+
+aside#Navigation a.Active-tab {
+  font-weight: 700;
 }
 
 aside#Navigation .Navigation-link-inner {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
   padding: 12px;
   font-size: 20px;
+  width: fit-content;
 }
 
-aside#Navigation .Navigation-link-inner:hover {
+aside#Navigation a:hover .Navigation-link-inner {
   background-color: var(--highlight);
   border-radius: 9999px;
 }
 
 aside#Navigation .Navigation-icon-wrapper {
   font-size: 25px;
+  width: 1.75rem;
+  height: 1.75rem;
 }
+
+aside#Navigation .Navigation-icon-wrapper.bird-logo {
+  font-size: 30px;
+}
+
 aside#Navigation .Navigation-label-wrapper {
   margin: 0px 16px 0px 20px;
 }
 
-aside#Navigation ul {
-  margin: 0;
-  padding: 0px 25px;
-  list-style-type: none;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  row-gap: 30px;
-}
-
-aside#Navigation li {
-  padding: 4px 0px;
-  font-size: 20px;
-}
-
-aside#Navigation li a {
-  margin-left: 20px;
-}
-
 main#Main {
-  width: 600px;
+  min-width: 600px;
   /* background-color: purple; */
   overflow-y: overlay;
   border-left: 1px solid var(--border);
@@ -86,8 +84,81 @@ aside#Explore {
   /* background-color: yellow; */
 }
 
+/* 500 - 700 */
+@media (max-width: 1279px) {
+  .App-wrapper {
+    gap: 15px;
+  }
+  aside#Navigation {
+    padding-left: 30px;
+    max-width: fit-content;
+    align-items: flex-end;
+  }
+  aside#Navigation a {
+    width: fit-content;
+  }
+  aside#Navigation .Navigation-link-inner {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding: 12px;
+    font-size: 20px;
+    margin: 0;
+  }
+  .Navigation-label-wrapper {
+    display: none;
+  }
+  .Navigation-tweet-btn-lg {
+    display: none;
+  }
+}
+
 @media (max-width: 999px) {
+  aside#Navigation {
+    max-width: fit-content;
+  }
   #Explore {
+    flex: 0 0;
+  }
+  #Explore ul {
+    display: none;
+  }
+}
+
+@media (max-width: 700px) {
+  .App-wrapper {
+    gap: 0px;
+  }
+
+  aside#Navigation {
+    margin: 0;
+    padding: 0;
+    max-width: 60px;
+    min-width: 60px;
+    align-items: center;
+  }
+
+  main#Main {
+    min-width: 440px;
+    max-width: 600px;
+    flex: 1 0;
+  }
+
+  aside#Explore {
+    display: none;
+  }
+}
+
+@media (max-width: 500px) {
+  aside#Navigation {
+    display: none;
+  }
+  main#Main {
+    min-width: 0px;
+    width: 100vw;
+  }
+  aside#Explore {
     display: none;
   }
 }
