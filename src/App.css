@@ -3,6 +3,7 @@
   --background: #15202b;
   --highlight: #3d4650;
   --border: #38444d;
+  --button: #1d9bf0;
 }
 
 .App {
@@ -16,7 +17,7 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  gap: 30px;
+  gap: 25px;
   height: 100%;
 }
 
@@ -71,8 +72,37 @@ aside#Navigation .Navigation-label-wrapper {
   margin: 0px 16px 0px 20px;
 }
 
+aside#Navigation .Navigation-tweet-btn-wrapper {
+}
+
+aside#Navigation a.Navigation-tweet-btn-sm {
+}
+
+aside#Navigation a.Navigation-tweet-btn-lg {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 200px;
+  height: 50px;
+  padding: 0 30px;
+  background-color: var(--button);
+  border-radius: 25px;
+}
+
+aside#Navigation .Navigation-tweet-btn-inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: var(--text);
+}
+
+aside#Navigation .Navigation-tweet-btn-label {
+}
+
 main#Main {
   min-width: 600px;
+  max-width: 600px;
   /* background-color: purple; */
   overflow-y: overlay;
   border-left: 1px solid var(--border);
@@ -82,6 +112,12 @@ main#Main {
 aside#Explore {
   width: 350px;
   /* background-color: yellow; */
+}
+
+@media (min-width: 1280px) {
+  .Navigation-tweet-btn-sm {
+    display: none;
+  }
 }
 
 /* 500 - 700 */
@@ -187,7 +223,8 @@ nav {
   position: sticky;
   top: 0;
   height: 50px;
-  font-size: large;
+  font-size: 20px;
+  font-weight: 700;
   /* background-color: green; */
   background-color: #15202bbf;
   backdrop-filter: blur(12px);
@@ -208,8 +245,135 @@ nav #Main-nav-inner-col {
   height: 100%;
 }
 
+#Write-tweet {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  padding: 15px;
+  border-bottom: 1px solid var(--border);
+  /* background-color: red; */
+  gap: 10px;
+}
+
+.pfp-area {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  /* background-color: orange; */
+}
+
+.pfp-icon {
+  /* font-size: 25px; */
+  width: 42px;
+  height: 42px;
+  border-radius: 42px;
+  border: 2px solid white;
+}
+
+#Write-tweet-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+  /* background-color: lime; */
+  gap: 15px;
+}
+
+#Write-tweet-input-wrapper {
+  height: 100%;
+  position: relative;
+  /* background-color: black; */
+}
+
+textarea#Write-tweet-input {
+  background: transparent;
+  color: var(--text);
+
+  resize: none;
+  border: 0 none;
+  font-size: 20px;
+  font-weight: 400;
+  outline: none;
+  width: 100%;
+  height: 100%;
+
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+textarea#Write-tweet-input::placeholder {
+  color: #8b98a5;
+}
+
+#Write-tweet-actions {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  /* background-color: slateblue; */
+  height: 50px;
+}
+
+#Write-tweet-tools {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 20px;
+  flex-grow: 1;
+  /* background-color: aqua; */
+  height: 100%;
+  align-items: center;
+}
+
+.tool {
+  width: 18px;
+  height: 18px;
+  color: var(--button);
+}
+
+#Write-tweet-submit-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  flex-grow: 1;
+  /* background-color: aquamarine; */
+  height: 100%;
+  align-items: center;
+}
+
+a#Write-tweet-submit-btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 70px;
+  height: 36px;
+  padding: 0 5px;
+  background-color: var(--button);
+  border-radius: 25px;
+}
+
+div#Write-tweet-submit-btn-inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: var(--text);
+}
+
+span#Write-tweet-submit-btn-label {
+}
+
 .Post {
-  height: 120px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  min-height: 120px;
+  max-width: 600px;
+  border-bottom: 1px solid var(--border);
 }
 
 /* .App-logo {

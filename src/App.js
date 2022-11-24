@@ -71,10 +71,12 @@ function App() {
               </div>
             </div>
           </a>
-          <a>
-            <div className="Navigation-link-inner">
-              <button className="Navigation-tweet-btn-sm">T</button>
-              <button className="Navigation-tweet-btn-lg">Tweet</button>
+          <a href="https://twitter.com" className="Navigation-tweet-btn-sm">
+            T
+          </a>
+          <a href="https://twitter.com" className="Navigation-tweet-btn-lg">
+            <div className="Navigation-tweet-btn-inner">
+              <span className="Navigation-tweet-btn-label">Tweet</span>
             </div>
           </a>
         </aside>
@@ -87,17 +89,68 @@ function App() {
               </div>
             </div>
           </nav>
+
           <div className="Post-feed">
-            <div className="Post">Post</div>
-            <div className="Post">Post</div>
-            <div className="Post">Post</div>
-            <div className="Post">Post</div>
-            <div className="Post">Post</div>
-            <div className="Post">Post</div>
-            <div className="Post">Post</div>
-            <div className="Post">Post</div>
-            <div className="Post">Post</div>
-            <div className="Post">Post</div>
+            <div id="Write-tweet">
+              <div className="pfp-area">
+                <FaRegUser className="pfp-icon" />
+              </div>
+              <div id="Write-tweet-container">
+                <div id="Write-tweet-input-wrapper">
+                  <textarea
+                    id="Write-tweet-input"
+                    placeholder={"What's happening?"}
+                    maxLength={140}
+                  />
+                </div>
+                <div id="Write-tweet-actions">
+                  <div id="Write-tweet-tools">
+                    <FaHashtag className="tool" />
+                    <FaRegBell className="tool" />
+                    <FaRegUser className="tool" />
+                  </div>
+                  <div id="Write-tweet-submit-wrapper">
+                    <a href="https://twitter.com" id="Write-tweet-submit-btn">
+                      <div id="Write-tweet-submit-btn-inner">
+                        <span id="Write-tweet-submit-btn-label">Tweet</span>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="Post">
+              <div className="pfp-area">
+                <FaRegUser className="pfp-icon" />
+              </div>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam
+            </div>
+            <div className="Post">
+              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+              commodo consequat.
+            </div>
+            <div className="Post">
+              Duis aute irure dolor in reprehenderit in voluptate velit esse
+              cillum dolore eu fugiat nulla pariatur.
+            </div>
+            <div className="Post">
+              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+              officia deserunt mollit anim id est laborum.
+            </div>
+            <div className="Post">
+              Bibendum neque egestas congue quisque egestas.
+            </div>
+            <div className="Post">
+              Malesuada nunc vel risus commodo viverra maecenas accumsan lacus
+              vel. Urna neque viverra justo nec ultrices dui sapien.
+            </div>
+            <div className="Post">
+              Consectetur adipiscing elit pellentesque habitant morbi tristique
+              senectus et.
+            </div>
             <div className="Post">Post</div>
           </div>
         </main>
