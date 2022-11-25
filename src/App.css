@@ -1,9 +1,12 @@
 :root {
   --text: #ffffff;
+  --subtext: #8b98a5;
   --background: #15202b;
   --highlight: #3d4650;
   --border: #38444d;
   --button: #1d9bf0;
+  --search: #273340;
+  --suggested: #1e2732;
 }
 
 .App {
@@ -17,7 +20,7 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  gap: 25px;
+  /* gap: 25px; */
   height: 100%;
 }
 
@@ -26,12 +29,10 @@ aside#Navigation {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: flex-start;
+  align-items: stretch;
   max-width: 275px;
-  width: 275px;
-  padding: 0;
+  padding: 0 12px;
   margin: 0;
-  /* background-color: blue; */
 }
 
 aside#Navigation a {
@@ -75,9 +76,6 @@ aside#Navigation .Navigation-label-wrapper {
 aside#Navigation .Navigation-tweet-btn-wrapper {
 }
 
-aside#Navigation a.Navigation-tweet-btn-sm {
-}
-
 aside#Navigation a.Navigation-tweet-btn-lg {
   margin-top: 10px;
   display: flex;
@@ -90,6 +88,18 @@ aside#Navigation a.Navigation-tweet-btn-lg {
   border-radius: 25px;
 }
 
+aside#Navigation a.Navigation-tweet-btn-sm {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  padding: 0;
+  background-color: var(--button);
+  border-radius: 25px;
+}
+
 aside#Navigation .Navigation-tweet-btn-inner {
   display: flex;
   flex-direction: column;
@@ -97,7 +107,73 @@ aside#Navigation .Navigation-tweet-btn-inner {
   color: var(--text);
 }
 
-aside#Navigation .Navigation-tweet-btn-label {
+aside#Navigation .Account-switch-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+  flex-grow: 1;
+  /* background-color: red; */
+  width: 100%;
+}
+
+aside#Navigation .Account-switch-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  /* background-color: #1d9bf0; */
+  flex-grow: 1;
+  padding: 12px;
+  margin: 12px 0;
+}
+
+.Account-switch-wrapper:hover {
+  background-color: var(--highlight);
+  border-radius: 50px;
+}
+
+.Account-switch-pfp-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.Account-switch-pfp {
+  width: 36px;
+  height: 36px;
+  border-radius: 36px;
+  border: 2px solid white;
+}
+
+.Account-switch-details-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+}
+
+.Account-switch-details-inner {
+  margin: 0 12px;
+}
+
+.Account-switch-name {
+  color: #f7f9f9;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.Account-switch-tag {
+  color: var(--subtext);
+  font-weight: 400;
+  font-size: 15px;
+}
+
+.Account-switch-options {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  font-size: 18px;
 }
 
 main#Main {
@@ -109,95 +185,19 @@ main#Main {
   border-right: 1px solid var(--border);
 }
 
-aside#Explore {
-  width: 350px;
-  /* background-color: yellow; */
-}
-
-@media (min-width: 1280px) {
-  .Navigation-tweet-btn-sm {
-    display: none;
-  }
-}
-
-/* 500 - 700 */
-@media (max-width: 1279px) {
-  .App-wrapper {
-    gap: 15px;
-  }
-  aside#Navigation {
-    padding-left: 30px;
-    max-width: fit-content;
-    align-items: flex-end;
-  }
-  aside#Navigation a {
-    width: fit-content;
-  }
-  aside#Navigation .Navigation-link-inner {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: flex-start;
-    padding: 12px;
-    font-size: 20px;
-    margin: 0;
-  }
-  .Navigation-label-wrapper {
-    display: none;
-  }
-  .Navigation-tweet-btn-lg {
-    display: none;
-  }
-}
-
-@media (max-width: 999px) {
-  aside#Navigation {
-    max-width: fit-content;
-  }
-  #Explore {
-    flex: 0 0;
-  }
-  #Explore ul {
-    display: none;
-  }
-}
-
-@media (max-width: 700px) {
-  .App-wrapper {
-    gap: 0px;
-  }
-
-  aside#Navigation {
-    margin: 0;
-    padding: 0;
-    max-width: 60px;
-    min-width: 60px;
-    align-items: center;
-  }
-
-  main#Main {
-    min-width: 440px;
-    max-width: 600px;
-    flex: 1 0;
-  }
-
-  aside#Explore {
-    display: none;
-  }
-}
-
-@media (max-width: 500px) {
-  aside#Navigation {
-    display: none;
-  }
-  main#Main {
-    min-width: 0px;
-    width: 100vw;
-  }
-  aside#Explore {
-    display: none;
-  }
-}
+/* main#Main {
+  max-width: 600px;
+  width: 100%;
+  display: flex;
+  flex-basis: auto;
+  flex-direction: column;
+  flex-shrink: 0;
+  margin: 0;
+  padding: 0;
+  overflow-y: overlay;
+  border-left: 1px solid var(--border);
+  border-right: 1px solid var(--border);
+} */
 
 main#Main::-webkit-scrollbar {
   width: 10px;
@@ -225,7 +225,6 @@ nav {
   height: 50px;
   font-size: 20px;
   font-weight: 700;
-  /* background-color: green; */
   background-color: #15202bbf;
   backdrop-filter: blur(12px);
 }
@@ -251,7 +250,6 @@ nav #Main-nav-inner-col {
   justify-content: flex-start;
   padding: 15px;
   border-bottom: 1px solid var(--border);
-  /* background-color: red; */
   gap: 10px;
 }
 
@@ -259,7 +257,6 @@ nav #Main-nav-inner-col {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  /* background-color: orange; */
 }
 
 .pfp-icon {
@@ -275,14 +272,12 @@ nav #Main-nav-inner-col {
   flex-direction: column;
   justify-content: flex-start;
   width: 100%;
-  /* background-color: lime; */
-  gap: 15px;
+  gap: 0;
 }
 
 #Write-tweet-input-wrapper {
   height: 100%;
   position: relative;
-  /* background-color: black; */
 }
 
 textarea#Write-tweet-input {
@@ -293,9 +288,12 @@ textarea#Write-tweet-input {
   border: 0 none;
   font-size: 20px;
   font-weight: 400;
+  line-height: 24px;
   outline: none;
   width: 100%;
-  height: 100%;
+  height: 56px;
+  padding: 12px 0 0 0;
+  margin-bottom: -12px;
 
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
@@ -305,7 +303,12 @@ textarea#Write-tweet-input {
 }
 
 textarea#Write-tweet-input::placeholder {
-  color: #8b98a5;
+  color: var(--subtext);
+}
+
+textarea#Write-tweet-input:focus {
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 2px;
 }
 
 #Write-tweet-actions {
@@ -313,8 +316,7 @@ textarea#Write-tweet-input::placeholder {
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-end;
-  /* background-color: slateblue; */
-  height: 50px;
+  height: 40px;
 }
 
 #Write-tweet-tools {
@@ -323,7 +325,6 @@ textarea#Write-tweet-input::placeholder {
   justify-content: flex-start;
   gap: 20px;
   flex-grow: 1;
-  /* background-color: aqua; */
   height: 100%;
   align-items: center;
 }
@@ -339,7 +340,6 @@ textarea#Write-tweet-input::placeholder {
   flex-direction: row;
   justify-content: flex-end;
   flex-grow: 1;
-  /* background-color: aquamarine; */
   height: 100%;
   align-items: center;
 }
@@ -349,10 +349,10 @@ a#Write-tweet-submit-btn {
   flex-direction: row;
   justify-content: center;
   width: 70px;
-  height: 36px;
+  height: 35px;
   padding: 0 5px;
   background-color: var(--button);
-  border-radius: 25px;
+  border-radius: 35px;
 }
 
 div#Write-tweet-submit-btn-inner {
@@ -369,17 +369,219 @@ span#Write-tweet-submit-btn-label {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  align-items: flex-start;
+  flex-grow: 1;
+  padding: 12px;
 
-  min-height: 120px;
-  max-width: 600px;
+  /* min-height: 100px; */
+  /* width: 600px; */
+
   border-bottom: 1px solid var(--border);
 }
 
-/* .App-logo {
-  height: 40vmin;
-  pointer-events: none;
-} */
+.Post:hover {
+  background-color: var(--highlight);
+}
+
+.post-pfp-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.post-pfp-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 42px;
+  border: 2px solid white;
+}
+
+.post-contents-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex-grow: 1;
+  padding: 0 10px;
+  gap: 1px;
+}
+
+.post-contents-inner {
+  margin: 0 12px;
+}
+
+.post-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 5px;
+}
+
+.poster-name {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 20px;
+}
+
+.poster-tag {
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--subtext);
+  line-height: 20px;
+}
+
+.time-since {
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--subtext);
+  line-height: 20px;
+}
+
+.post-text {
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--text);
+  line-height: 20px;
+}
+
+.post-actions {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  max-width: 425px;
+  column-gap: 8px;
+  margin-top: 12px;
+  align-items: stretch;
+}
+
+.post-action {
+  width: 1.25em;
+  height: 1.25em;
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--subtext);
+  line-height: 20px;
+}
+
+.post-options {
+  display: flex;
+  /* flex-grow: 1; */
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+  font-size: 18px;
+  padding: 0 10px;
+  color: var(--subtext);
+}
+
+.Post-inner {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.Post .Post-inner .pfp-area {
+}
+
+.Post-sections-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+aside#Explore {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  width: 350px;
+  flex-basis: auto;
+  padding: 10px 25px 0px 25px;
+}
+
+#search-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  flex-grow: 1;
+  width: 100%;
+  padding: 0 10px;
+
+  /* gap: 15px; */
+}
+
+#search-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-grow: 1;
+  padding: 12px;
+  margin: 12px 0;
+  background-color: var(--search);
+  border-radius: 25px;
+}
+
+#search-icon-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.input-icon {
+  width: 18px;
+  height: 18px;
+  color: var(--subtext);
+}
+
+#search-input-wrapper {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  /* align-items: flex-end; */
+  max-width: 100%;
+}
+
+input[type="text"]#search-input {
+  background: transparent;
+  color: var(--text);
+
+  resize: none;
+  border: 0 none;
+  font-size: 15px;
+  font-weight: 400;
+  outline: none;
+  /* text-align: left; */
+
+  margin: 0 12px;
+}
+
+input[type="text"]#search-input::placeholder {
+  color: var(--subtext);
+}
+
+#trending-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  flex-grow: 1;
+  width: 100%;
+  padding: 0 10px;
+  /* gap: 15px; */
+}
+
+#trending {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-grow: 1;
+  padding: 12px;
+  margin: 12px 0;
+  background-color: var(--suggested);
+  border-radius: 25px;
+}
 
 a:link {
   text-decoration: none;
@@ -400,3 +602,119 @@ a:active {
   text-decoration: none;
   color: var(--text);
 }
+
+/* 0px -> 500px vw */
+@media (min-width: 0px) and (max-width: 500px) {
+  aside#Navigation {
+    display: none;
+  }
+  main#Main {
+    min-width: 0px;
+    width: 100vw;
+  }
+  aside#Explore {
+    display: none;
+  }
+}
+
+/* 500px -> 700px vw */
+@media (min-width: 500px) and (max-width: 700px) {
+  .App-wrapper {
+    gap: 0px;
+  }
+
+  aside#Navigation {
+    max-width: 88px;
+    flex-shrink: 0;
+  }
+
+  aside#Navigation .Navigation-link-inner {
+    justify-content: center;
+  }
+
+  aside#Navigation .Navigation-label-wrapper {
+    display: none;
+  }
+
+  main#Main {
+    min-width: 440px;
+    max-width: 600px;
+    flex: 1 0;
+  }
+
+  aside#Explore {
+    display: none;
+  }
+}
+
+/* 700px -> 1280px */
+@media (min-width: 700px) and (max-width: 1280px) {
+  .App-wrapper {
+    /* gap: 15px; */
+  }
+  aside#Navigation {
+    /* padding-left: 30px; */
+    /* max-width: fit-content; */
+    max-width: 88px;
+    flex-shrink: 0;
+    /* align-items: flex-end; */
+    align-items: stretch;
+  }
+  aside#Navigation a {
+    width: 100%;
+  }
+  aside#Navigation .Navigation-link-inner {
+    display: flex;
+    flex-direction: row;
+    justify-content: stretch;
+    align-items: flex-start;
+    padding: 12px;
+    font-size: 20px;
+    margin: 0;
+  }
+  .Navigation-label-wrapper {
+    display: none;
+  }
+  aside#Explore {
+    display: none;
+  }
+}
+
+@media (min-width: 1000px) {
+  /* aside#Navigation {
+    max-width: fit-content;
+  } */
+  aside#Explore {
+    display: flex;
+  }
+}
+
+@media (min-width: 500px) and (max-width: 1280px) {
+  aside#Navigation a.Navigation-tweet-btn-lg {
+    display: none;
+  }
+}
+
+@media (min-width: 1280px) {
+  aside#Navigation a.Navigation-tweet-btn-sm {
+    display: none;
+  }
+}
+
+/*
+  Breakpoints:
+
+  Everything >= 1920px -> Entire site, no change
+  < 1280px -> left Nav collapses into just Icon buttons
+  < 1000px -> 1) right Panel disappears entirely
+              2) Search button added to left Nav (under Home button)
+  < 700px -> 1) no more margin/gap/padding 
+             2) main Feed starts shrinking (but left Nav width doesn't shrink)
+  < 620px -> 
+
+  500px
+  700px
+  1280px
+  (1000?px)
+
+*/
