@@ -12,7 +12,6 @@ import {
   FaSearch,
   FaImage,
   FaRegComment,
-  FaRetweet,
 } from "react-icons/fa";
 import { RiFileGifLine } from "react-icons/ri";
 import {
@@ -216,12 +215,23 @@ function App() {
               </div>
             </div>
           </div>
-          <div id="explore-container">
+          <div id="trending-container">
             <div id="trending">
+              <h2>What's happening</h2>
               <ul>
                 <li>#ByeTwitter</li>
                 <li>#GrimesComeBack</li>
                 <li>#IllTakePeteDavidson</li>
+              </ul>
+            </div>
+          </div>
+          <div id="suggested-container">
+            <div id="suggested">
+              <h2>Who to follow</h2>
+              <ul>
+                <li>@abc</li>
+                <li>@def</li>
+                <li>#@ghi</li>
               </ul>
             </div>
           </div>
