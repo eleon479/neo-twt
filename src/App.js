@@ -26,7 +26,7 @@ import { FiShare } from "react-icons/fi";
 import { AiOutlineRetweet } from "react-icons/ai";
 import GetTimelineFeed from "./tweets";
 
-function MakePost(name, tag, ts, text) {
+function TweetItem({ tweet }) {
   return (
     <div className="Post">
       <div className="post-pfp-container">
@@ -34,11 +34,11 @@ function MakePost(name, tag, ts, text) {
       </div>
       <div className="post-contents-container">
         <div className="post-info">
-          <div className="poster-name">{name}</div>
-          <div className="poster-tag">@{tag}</div>
-          <div className="time-since"> · {ts}</div>
+          <div className="poster-name">{tweet.name}</div>
+          <div className="poster-tag">@{tweet.tag}</div>
+          <div className="time-since"> · {tweet.ts}</div>
         </div>
-        <div className="post-text">{text}</div>
+        <div className="post-text">{tweet.text}</div>
         <div className="post-actions">
           <div className="reply-action">
             <FaRegComment className="post-action" />
@@ -195,9 +195,9 @@ function App() {
             </div>
 
             {/* Tweet Feed */}
-            {GetTimelineFeed().map((tweet) =>
-              MakePost(tweet.name, tweet.tag, tweet.ts, tweet.text)
-            )}
+            {GetTimelineFeed().map((tweet) => (
+              <TweetItem tweet={tweet} />
+            ))}
           </div>
         </main>
         <aside id="Explore">
